@@ -5,12 +5,14 @@ import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
 import OrderModal from '@/components/OrderModal';
 import { Order } from '@/types/order';
+import { useRouter } from 'next/navigation';
 
 export default function Dashboard() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -57,7 +59,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gray-50 p-8 pb-24">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-8 mb-8">
           <div className="flex items-center space-x-3">
@@ -145,6 +147,32 @@ export default function Dashboard() {
           onClose={() => setSelectedOrder(null)}
         />
       )}
+
+      {/* Нижняя навигация */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-center space-x-4 py-3">
+            <button
+              onClick={() => router.push('/history')}
+              className="flex items-center justify-center space-x-2 px-6 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>История</span>
+            </button>
+            <button
+              onClick={() => router.push('/statistics')}
+              className="flex items-center justify-center space-x-2 px-6 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              <span>Статистика</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 } 
