@@ -126,7 +126,7 @@ export default function Dashboard() {
                       <span>{order.items.length} позиций</span>
                     </div>
                     <span className="font-medium text-purple-600">
-                      {order.totalPrice.toLocaleString('ru-RU')} ₽
+                      {order.totalPrice.toLocaleString('ru-RU')} сом
                     </span>
                   </div>
                   <div className="text-xs text-gray-500">
