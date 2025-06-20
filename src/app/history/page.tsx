@@ -249,37 +249,37 @@ export default function History() {
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   <div className="bg-gray-50 rounded-xl p-4 flex items-center space-x-3">
                     <div className="p-2 bg-purple-100 rounded-lg">
-                      <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Официант</div>
-                      <div className="font-medium text-gray-900">{selectedOrder.waiter.fullName}</div>
+                      <div className="font-medium text-gray-900 text-sm">{selectedOrder.waiter.fullName}</div>
                     </div>
                   </div>
                   <div className="bg-gray-50 rounded-xl p-4 flex items-center space-x-3">
                     <div className="p-2 bg-purple-100 rounded-lg">
-                      <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Время оплаты</div>
-                      <div className="font-medium text-gray-900">
+                      <div className="font-medium text-gray-900 text-sm">
                         {format(new Date(selectedOrder.paidAt), 'dd.MM.yyyy HH:mm', { locale: ru })}
                       </div>
                     </div>
                   </div>
                   <div className="bg-gray-50 rounded-xl p-4 flex items-center space-x-3">
                     <div className="p-2 bg-purple-100 rounded-lg">
-                      <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                       </svg>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Кассир</div>
-                      <div className="font-medium text-gray-900">{selectedOrder.cashier.fullName}</div>
+                      <div className="font-medium text-gray-900 text-sm">{selectedOrder.cashier.fullName}</div>
                     </div>
                   </div>
                 </div>

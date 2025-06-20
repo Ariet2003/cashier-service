@@ -162,7 +162,7 @@ export default function Dashboard() {
               <span>История</span>
             </button>
             <button
-              onClick={() => router.push('/statistics')}
+              onClick={() => router.push('/dashboard/statistics')}
               className="flex items-center justify-center space-x-2 px-6 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
